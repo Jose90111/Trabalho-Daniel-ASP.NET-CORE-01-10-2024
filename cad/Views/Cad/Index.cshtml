@@ -1,0 +1,59 @@
+﻿@model IEnumerable<cad.Models.Cliente>
+
+<div class="container mt-5">
+    <div class="text-center">
+        <!-- Título -->
+        <h1 class="mb-4">Lista de Clientes Cadastrados</h1>
+    </div>
+
+    <!-- Tabela Centralizada com rolagem horizontal -->
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th style="width: auto;">Nome</th>
+                            <th style="width: auto;">Telefone</th>
+                            <th style="width: auto;">Email</th>
+                            <th style="width: auto;">Logradouro</th>
+                            <th style="width: auto;">Número</th>
+                            <th style="width: auto;">Bairro</th>
+                            <th style="width: auto;">Cidade</th>
+                            <th style="width: auto;">Estado</th>
+                            <th style="width: auto;">CEP</th>
+                            <th style="width: auto;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Nome</td>
+                                <td>@item.Telefone</td>
+                                <td>@item.Email</td>
+                                <td>@item.Logradouro</td>
+                                <td>@item.Numero</td>
+                                <td>@item.Bairro</td>
+                                <td>@item.Cidade</td>
+                                <td>@item.Estado</td>
+                                <td>@item.CEP</td>
+                                <td>
+                                    <div class="d-flex justify-content-around">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Deletar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão para criar novo cliente centralizado -->
+    <div class="text-center mt-4">
+        <a asp-action="Create" class="btn btn-success btn-lg">Novo Cliente</a>
+    </div>
+</div>

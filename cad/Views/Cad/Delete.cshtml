@@ -1,0 +1,82 @@
+﻿@model cad.Models.Cliente
+
+<h2>Deletar Cliente</h2>
+
+<h3>Tem certeza de que deseja deletar este cliente?</h3>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            Logradouro
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Logradouro)
+        </dd>
+        <dt>
+            Número
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt>
+            Complemento
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+        <dt>
+            Bairro
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+        <dt>
+            Cidade
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt>
+            Estado
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt>
+            CEP
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CEP)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+    </form>
+
+    <form asp-controller="Cad" asp-action="Index" method="get">
+        <button type="submit" class="btn btn-secondary">Voltar para a Lista</button>
+    </form>
+
+</div>
